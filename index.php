@@ -15,7 +15,6 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -39,6 +38,15 @@
                 <div class="form-group">
                   <input type="password" name="password" class="form-control" placeholder="Senha">
                 </div>
+
+                <?php 
+                  if(isset($_GET['login']) && $_GET['login'] == 'erro') {
+                ?>
+                  <div class="text-danger">
+                   Usuário ou Senha inválida.
+                  </div>
+                <?php } ?>
+              
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
